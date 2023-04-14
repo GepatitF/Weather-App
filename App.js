@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View, TouchableOpacity, Image  } from 'react-native';
+import { FlatList, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView  } from 'react-native';
 
 export default function App() {
 
@@ -22,38 +22,60 @@ export default function App() {
           </View>
           <View style={styles.conditionExpectedInfoContainer}>
             <Text style={styles.conditionInfoText}>Sunny conditions expected around 13:00</Text>
-            <View style={styles.rightNowWeatherContainer}>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+            <ScrollView horizontal={true}>
+              <View style={styles.rightNowWeatherContainer}>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
+                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
+                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
+                  <Text style={styles.cloudy}>Cloudy</Text>
+                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
+                </View>
               </View>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-              </View>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-              </View>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-              </View>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-              </View>
-              <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                <Text style={styles.cloudy}>Cloudy</Text>
-                <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-              </View>
-            </View>
+            </ScrollView>
           </View>
             <View style={styles.weekWeatherContainer}>
               <Text style={styles.weekWeatherInfo}>10-Day Forecast</Text>
@@ -212,7 +234,6 @@ const styles = StyleSheet.create({
   },
   timeWeatherInfo: {
     marginTop: 10,
-    marginRight: 9,
     borderRadius: 5,
     backgroundColor: '#BDBEC2',
     padding: 5,
