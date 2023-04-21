@@ -1,186 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView  } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+
+import MainWeather from './components/main-weather-component/MainWeather'
+import ConditionWeather from './components/condition-weather-component/ConditionWeather';
+import Forecast from './components/forecast-weather-component/ForecastWeather';
+import AirQuality from './components/air-quality-component/AirQuality';
+import Precipitation from './components/precipitation-component/Precipitation';
+import InfoPanel from './components/info-panel-component/InfoPanel';
 
 export default function App() {
 
-  const cityWeather = [
+  const weatherData = [
     {
       city: 'Saint-Petersburg',
-      weather: '18°C',
-      weathercondition: 'Partly cloudy'
-    }
+      celcium: '18°C',
+      condition: 'Partly cloudy',
+      conditionExpected: 'Cloudy',
+      time: 'Now',
+      minCelcium: '14°C',
+      maxCelcium: '21°C'
+    },
   ]
   
   return (
     <View style={styles.container}>
-      <FlatList style={styles.flatListContainer} data={cityWeather} renderItem={({ item }) => (
+      <FlatList style={styles.flatListContainer} data={weatherData} renderItem={({ item }) => (
         <View style={styles.container}>
-          <View style={styles.container}>
-            <Text style={styles.PlaceInfoStyle}>{item.city}</Text>
-            <Text style={styles.celciumPlaceInfo}>{item.weather}</Text>
-            <Text style={styles.weatherCondition}>{item.weathercondition}</Text>
-          </View>
-          <View style={styles.conditionExpectedInfoContainer}>
-            <Text style={styles.conditionInfoText}>Sunny conditions expected around 13:00</Text>
-            <ScrollView horizontal={true}>
-              <View style={styles.rightNowWeatherContainer}>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-                <View style={[styles.timeWeatherContainer, styles.timeWeatherInfo, styles.timeWeatherInfoLastChild]}>
-                  <Text style={styles.infoTimeWeatherContainer}>Now</Text>
-                  <Text style={styles.cloudy}>Cloudy</Text>
-                  <Text style={styles.infoTimeWeatherContainer}>18°C</Text>
-                </View>
-              </View>
-            </ScrollView>
-          </View>
-            <View style={styles.weekWeatherContainer}>
-              <Text style={styles.weekWeatherInfo}>10-Day Forecast</Text>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-              <View style={styles.weekWeatherStatusContainer}>
-                <TouchableOpacity style={styles.weekWeatherStatus}><Text>Today Sunny 14°C 'StatusBar' 21°C</Text></TouchableOpacity>
-              </View>
-            </View>
-            <View style={styles.airQualityStatusContainer}>
-              <View>
-                <Text>Air quality</Text>
-                <Text style={styles.airRatingQualityText}>Good</Text>
-                <Text>Air quality is better than yetserday at about this time</Text>
-              </View>
-              <View>
-                <Text style={styles.airQualityStatusBar}>'StatusBar'</Text>
-              </View>
-            </View>
-            <View style={styles.precipitationContainer}>
-              <Text>Precipitation</Text>
-              <View style={styles.precipitationImageContainer}>
-                <Image style={styles.precipitationImage} source={require('./assets/location.png')} />
-              </View>
-            </View>
-            <View style={styles.panelContainer}>
-              <View style={[styles.panel, styles.panelFirstChild]}>
-                <Text>Index</Text>
-                <Text>0</Text>
-                <Text>Low</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Use sun protection</Text>
-                <Text>unilt 18:00</Text>
-              </View>
-              <View style={styles.panel}>
-                <Text>Sunrise</Text>
-                <Text>5:46 AM</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Sunrise: 07:32</Text>
-              </View>
-            </View>
-            <View style={styles.panelContainer}>
-              <View style={[styles.panel, styles.panelFirstChild]}>
-                <Text>Index</Text>
-                <Text>0</Text>
-                <Text>Low</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Use sun protection</Text>
-                <Text>unilt 18:00</Text>
-              </View>
-              <View style={styles.panel}>
-                <Text>Sunrise</Text>
-                <Text>5:46 AM</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Sunrise: 07:32</Text>
-              </View>
-            </View>
-            <View style={styles.panelContainer}>
-              <View style={[styles.panel, styles.panelFirstChild]}>
-                <Text>Index</Text>
-                <Text>0</Text>
-                <Text>Low</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Use sun protection</Text>
-                <Text>unilt 18:00</Text>
-              </View>
-              <View style={styles.panel}>
-                <Text>Sunrise</Text>
-                <Text>5:46 AM</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Sunrise: 07:32</Text>
-              </View>
-            </View>
-            <View style={styles.panelContainer}>
-              <View style={[styles.panel, styles.panelFirstChild]}>
-                <Text>Index</Text>
-                <Text>0</Text>
-                <Text>Low</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Use sun protection</Text>
-                <Text>unilt 18:00</Text>
-              </View>
-              <View style={styles.panel}>
-                <Text>Sunrise</Text>
-                <Text>5:46 AM</Text>
-                <Text>'StatusBar'</Text>
-                <Text>Sunrise: 07:32</Text>
-              </View>
-            </View>
+          <MainWeather city={item.city} weatherCondition={item.condition} celcium={item.celcium} />
+          <ConditionWeather time={item.time} conditionExpected={item.conditionExpected} celcium={item.celcium} />
+          <Forecast minCelcium={item.minCelcium} maxCelcium={item.maxCelcium}/>
+          <AirQuality/>
+          <Precipitation/>
+          <InfoPanel/>
+          <InfoPanel/>
+          <InfoPanel/>
+          <InfoPanel/>
         </View>
       )} > 
       </FlatList>
